@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
 :root {
-  --azulescuro: rgb(43, 55, 104);
+  --azulescuro: #0D4D79;
   --azulclaro: #5a5ce7;
   --bege: rgb(247, 196, 102);
   --cinza: rgb(228, 227, 227);
@@ -74,10 +74,12 @@ footer {
 }
 
 header h2{
+  color: #0D4D79;
   font-size: 20px;
   padding-bottom: 1%;
   text-shadow: var(--bege);
 }
+
 header p {
   background-color: var(--bege);
   color: var(--azulescuro);
@@ -101,22 +103,25 @@ header img {
   vertical-align: middle;
 }
 
-header nav img {
-  width: 2%;
-  top: 1px;
-}
-aside{
-  padding: 1%;
-  margin: auto;
-  width: 90%;
-  border-radius: 5px;
-  box-shadow: 1px 1px 5px 1px var(--preto);
+header nav {
+  background-color: #DAA940;
+  width: 100%;
 }
 
-aside h2{
-  color: var(--azulescuro);
-  font-size: 30px;
+#nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: bottom;
 }
+
+header nav img {
+  width: 40px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 #grid-conteudo{
   background-color: var(--cinza);
   border-radius: 10px;
@@ -130,6 +135,28 @@ aside h2{
 }
 .grid div{
   text-align: center;
+}
+
+#navegation{
+    background-color: var(--azulescuro);
+}
+
+aside{
+  padding: 1%;
+  margin: auto;
+  width: 90%;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px 1px var(--preto);
+}
+
+aside p{
+  text-align:justify;
+  padding-right: 25px;
+}
+
+aside h2{
+  color: var(--azulescuro);
+  font-size: 30px;
 }
 
 h1 {
@@ -176,27 +203,10 @@ nav{
 
 
 a:hover {
-  color: var(--bege);
+  color: var(--azulescuro);
+  zoom: 120%;
 }
 
-form {
-  text-align: center;
-}
-
-form input {
-  text-align: 30% ;
-  color: #444444;
-  background-color: rgb(231, 231, 231);
-  font-size: 17px;
-  height: 40px;
-  width: 60%;
-  border-radius: 10px;
-  outline: none;
-  padding-left: 0.8em;
-  transition: all 0.5s;
-  overflow: hidden;
-
-}
 input:hover, input:focus {
   border: 2px solid #4A9DEC;
   box-shadow: 0px 0px 0px 7px rgb(74, 157, 236, 20%);

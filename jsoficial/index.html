@@ -1,80 +1,87 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
   <head>
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="shortcut icon" href="img/jslogo.jpeg" type="image/x-icon" />
+    <link rel="shortcut icon" href="img/jsLogoSimples.jpeg" type="image/x-icon"/>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>JS Materiais para construção</title>
   </head>
+
   <body>
     <header>
-      <p> <img src="img/icons/mapa.png" alt="icon">
-        R. Profa. Célia Lourdes Vercelino, 1158 - Jardim Santa Cruz, Boituva -
-        SP, 18550-000 (15) 99612-2655
-      </p>
-      <div>
-        <form action="#" method="get">
-          <img src="img/jslogo.jpeg" alt="Imagem" />
-          <input type=" search" id=" pesquisa" name=" pesquisa" placeholder="O que você procura na JS?"/>
-          <button type="submit">
-            <i class="bi bi-house-door-fill"></i> Pesquisar
-          </button>
-          <h2>Seja bem vindo a nossa loja. Aqui você encontra as melhores marcas do mercado e muito mais!</h2>
-          <script src="js/index.js"></script>
-          <nav>
-            <a href="index.html"> <img src="img/icons/iconinicio.png" alt="">INÍCIO</a>
-            <a href="ferramentas.html"> <img src="img/icons/ferramenta.png" alt="">FERRAMENTAS</a>
-            <a href="hidraulica.html"> <img src="img/icons/torneira.png" alt="">HIDRÁULICA</a>
-            <a href="eletrica.html"> <img src="img/icons/instantaneo.png" alt="">ELÉTRICA</a>
-            <a href="madeiras.html"> <img src="img/icons/madeira.png" alt="">MADEIRAS</a>
-            <a href="construcao.html"> <img src="img/icons/parede-de-tijolos.png" alt="">CONSTRUÇÃO</a>
+            <div id="navegation">
+              <img src="img/jsLogoSimples.jpeg" alt="Logotipo da Js Materiais" style="width: 120px; height: 120px; display: inline-block; border-radius: 100%;"/>
+              <h2 style="color:white; font-size: 60px; display: inline-block; align-items: center; text-align: center; vertical-align:bottom">Js Materiais</h2>
+            </div>
+          <nav id="nav">
+              <a href="index.html" style="color:#0D4D79"><img src="img/icons/house.svg" alt="">Início</a>
+              <a href="ferramentas.html"> <img src="img/icons/screwdriver_and_wrench.svg" alt="">Ferramentas</a>
+              <a href="hidraulica.html"> <img src="img/icons/shower.svg" alt="">Hidráulica</a>
+              <a href="eletrica.html"> <img src="img/icons/bolt.svg" alt="">Elétrica</a>
+              <a href="madeiras.html"> <img src="img/icons/tree.svg" alt="">Madeira</a>
+              <a href="construcao.html"> <img src="img/icons/industry.svg" alt="">Construção</a>
           </nav>
-        </form>
-      </div>
+
+          <div class="separador-conteudo"></div>
+          <div class="separador"></div>
+          
+          <h2 style="align-items: center; text-align: center;">Seja bem vindo a nossa loja. Aqui você encontra as melhores marcas do mercado e muito mais!</h2>
+          <script src="js/index.js"></script>
     </header>
+    
     <div id="instagram">
-      <a href="https://instagram.com/jsmateriaisconstrucao1/"> <img src="img/icons/instagram.png" alt="instagram"></a>
+      <a href="https://instagram.com/jsmateriaisconstrucao1/" target="_blank">
+        <img src="img/icons/instagram.png" alt="instagram">
+      </a>
     </div>
+
     <div id="Whatsapp">
-      <a href="https://wa.me/5515996122655?text=Bem%20vindo%20a%20JS!%20Fa%C3%A7a%20j%C3%A1%20o%20seu%20pedido%F0%9F%98%83">
+      <a href="https://api.whatsapp.com/send/?phone=5515996122655&text=Oi+tudo+bem?+Gostaria+de+mais+informa%C3%A7%C3%B5es!&type=phone_number&app_absent=0" target="_blank">
         <img src="img/icons/whtasLogo.png" alt="Whatsapp" />
       </a>
     </div>
+    
     <div class="separador-conteudo"></div>
-    <main>
-      <article></article>
-    </main>
-    <br />
     <div class="separador"></div>
-    <br />
-    <aside>
-      <h2>Produtos mais vendidos</h2>
+
+    <aside><h2>Sobre Nós:</h2></aside>
+    
+    <aside id="nav">
       <br>
-      <section id="grid-conteudo">
-        <div class="grid">
-          <div><a href="#"> <img src="img/PMV/cimentocaue.jpg" width="100%"></a></div>
-          <div><a href="#"> <img src="img/PMV/cimentovotoram.jpg" width="100%"></a></div>
-          <div><a href="#"><img src="img/PMV/cimentotupi.jpg" width="100%" alt=""></a></div>
-          <div><a href="#"><img src="img/PMV/tabuas.jpg" width="100%"></a></div>
-          <div><a href="#"><img src="img/PMV/caixadagua.jpg" width="100%"></a></div>
-          <div><a href="#"><img src="img/PMV/canduite.jpg" width="100%"></a></div>
-          <div><a href="#"><img src="img/PMV/tubo1.jpg" width="100%"></a></div>
-          <div><a href="#"><img src="img/PMV/tubo2.jpg" width="100%"></a></div>
-
-        </div>
-      </section>
+        <p>Desde 2019, na encantadora cidade de Boituva/SP, somos mais do que uma simples loja de materiais de construção — somos seus parceiros na realização de sonhos e na construção de um futuro cheio de possibilidades! Nosso objetivo é transformar cada projeto em uma experiência especial, oferecendo um vasto estoque de areia, pedra, madeiras, telhas, tijolos e equipamentos de alta qualidade. Com uma equipe apaixonada, dedicada e sempre pronta para ajudar, trabalhamos com carinho para garantir que suas ideias ganhem vida com rapidez, segurança e um toque de atenção que faz toda a diferença. Aqui, cada cliente é parte da nossa história, e cada projeto é uma nova oportunidade de criar algo único e duradouro.
+         Venha nos visitar e descubra como podemos ajudar a construir o seu sonho, com confiança, alegria e um sorriso no rosto. Estamos ansiosos para fazer parte da sua jornada!</p>
+         <img src="img/Imagens/sobreNos.jpg" alt="Imagem da vista de cima da loja">
     </aside>
-    <br />
-    <div class="separador"></div>
-    <br />
 
+    <br/>
+    <div class="separador"></div>
+    <br/>
+
+    <div>
+      <iframe src="https://www.google.com/maps/embed?pb=!4v1747578189728!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJQzRvNDd0VUE.!2m2!1d-23.290287888482993!2d-47.68815271026727!3f40!4f10!5f0.7820865974627469" width="100%" height="600" style="border:0;" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade" title="R. Profa. Célia Lourdes Vercelino, 1158 - Jardim Santa Cruz, Boituva - SP, 18550-000 (15) 99612-2655">
+      </iframe>
+      <p style="align-items: center; text-align: center;"><img src="img/icons/mapa.png" alt="icone de mapa" style="width: 50px; height: 50px;"> R. Profa. Célia Lourdes Vercelino, 1158 - Jardim Santa Cruz, Boituva - SP, 18550-000 (15) 99612-2655</p>
+      <h2 style="align-items: center; text-align: center;">Funcionamento:</h2>
+      <pre style="align-items: center; text-align: center;">
+        Nossos horários de funcionamento: 
+
+        Segunda à sexta 07:00 às 17:30 horas.
+
+        Sábado 07:00 às 11:30 horas. 
+
+        Domingo Fechado
+      </pre>
+    </div>
+    
     <footer>
       <h3>JS - Materiais para construção</h3>
       <h4>Construindo seu sonho!</h4>
       <p>CNPJ: 00-000000/ 00</p>
       <p>Whatsapp: (15) 99612-2655</p>
+      <h2>© 2025 JS Materiais - Todos os direitos reservados.</h2>
     </footer>
+
   </body>
-  </html>
+</html>
