@@ -1,0 +1,216 @@
+{
+  "entities": {
+    "Patient": {
+      "title": "Patient",
+      "description": "Patient information",
+      "type": "object",
+      "properties": {
+        "id": { "type": "number" },
+        "name": { "type": "string" },
+        "phone": { "type": "string" },
+        "absences": { "type": "number" },
+        "default_amount": { "type": "number" },
+        "default_session_type": { "type": "string" },
+        "ownerId": { "type": "string" }
+      },
+      "required": ["id", "name", "ownerId"]
+    },
+    "Session": {
+      "title": "Session",
+      "description": "Clinical session information",
+      "type": "object",
+      "properties": {
+        "id": { "type": "number" },
+        "patient_name": { "type": "string" },
+        "patient_phone": { "type": "string" },
+        "amount": { "type": "number" },
+        "session_date": { "type": "string" },
+        "session_time": { "type": "string" },
+        "session_type": { "type": "string" },
+        "status": { "type": "string", "enum": ["scheduled", "paid", "cancelled"] },
+        "notes": { "type": "string" },
+        "is_paid": { "type": "boolean" },
+        "payment_method": { "type": "string" },
+        "ownerId": { "type": "string" }
+      },
+      "required": ["id", "patient_name", "session_date", "session_time", "ownerId"]
+    },
+    "Note": {
+      "title": "Note",
+      "description": "General notes and reminders",
+      "type": "object",
+      "properties": {
+        "id": { "type": "number" },
+        "title": { "type": "string" },
+        "content": { "type": "string" },
+        "date": { "type": "string" },
+        "ownerId": { "type": "string" }
+      },
+      "required": ["id", "title", "content", "ownerId"]
+    },
+    "WaitingItem": {
+      "title": "WaitingItem",
+      "description": "Patients in the waiting list",
+      "type": "object",
+      "properties": {
+        "id": { "type": "number" },
+        "patient_name": { "type": "string" },
+        "phone": { "type": "string" },
+        "preferred_time": { "type": "string" },
+        "complaint": { "type": "string" },
+        "notes": { "type": "string" },
+        "date": { "type": "string" },
+        "ownerId": { "type": "string" }
+      },
+      "required": ["id", "patient_name", "ownerId"]
+    },
+    "Profile": {
+      "title": "Profile",
+      "description": "Professional profile information",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "profession": { "type": "string" },
+        "specialty": { "type": "string" },
+        "registration": { "type": "string" },
+        "phone": { "type": "string" },
+        "email": { "type": "string" },
+        "business_hours": { "type": "string" },
+        "average_session_time": { "type": "string" },
+        "profile_picture": { "type": "string" },
+        "is_premium": { "type": "boolean" },
+        "subscription_expiry": { "type": "string" },
+        "ownerId": { "type": "string" }
+      },
+      "required": ["ownerId"]
+    },
+    "MedicalPatient": {
+      "title": "MedicalPatient",
+      "description": "Patient in the electronic health record system",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "age": { "type": "string" },
+        "profession": { "type": "string" },
+        "responsibleName": { "type": "string" },
+        "medicalDiagnosis": { "type": "string" },
+        "otherDiagnoses": { "type": "string" },
+        "ownerId": { "type": "string" }
+      },
+      "required": ["name", "age", "profession", "ownerId"]
+    },
+    "MedicalRecord": {
+      "title": "MedicalRecord",
+      "description": "Individual medical record entry",
+      "type": "object",
+      "properties": {
+        "patientId": { "type": "string" },
+        "type": { "type": "string", "enum": ["interview", "assessment", "evolution", "vitals"] },
+        "date": { "type": "string" },
+        "content": { "type": "string" },
+        "vitals": {
+          "type": "object",
+          "properties": {
+            "pressure": { "type": "string" },
+            "temperature": { "type": "string" },
+            "heartRate": { "type": "string" },
+            "respiratoryRate": { "type": "string" },
+            "oxygenSaturation": { "type": "string" }
+          }
+        },
+        "history": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "date": { "type": "string" },
+              "content": { "type": "string" },
+              "updatedAt": { "type": "string" }
+            }
+          }
+        },
+        "subEvolutions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "string" },
+              "date": { "type": "string" },
+              "content": { "type": "string" },
+              "createdAt": { "type": "string" }
+            },
+            "required": ["id", "date", "content"]
+          }
+        },
+        "ownerId": { "type": "string" }
+      },
+      "required": ["patientId", "type", "date", "ownerId"]
+    },
+    "PatientFile": {
+      "title": "PatientFile",
+      "description": "Uploaded files and documents for medical patients",
+      "type": "object",
+      "properties": {
+        "patientId": { "type": "string" },
+        "name": { "type": "string" },
+        "type": { "type": "string" },
+        "size": { "type": "number" },
+        "contentUrl": { "type": "string" },
+        "uploadedAt": { "type": "string" },
+        "ownerId": { "type": "string" }
+      },
+      "required": ["patientId", "name", "type", "contentUrl", "ownerId"]
+    },
+    "Reminder": {
+      "title": "Reminder",
+      "description": "Security logs/reminders for patient schedule changes",
+      "type": "object",
+      "properties": {
+        "patient_name": { "type": "string" },
+        "type": { "type": "string" },
+        "description": { "type": "string" },
+        "created_at": { "type": "string" },
+        "ownerId": { "type": "string" }
+      },
+      "required": ["patient_name", "type", "description", "ownerId"]
+    }
+  },
+  "firestore": {
+    "patients/{patientId}": {
+      "schema": "Patient",
+      "description": "Collection of patients"
+    },
+    "sessions/{sessionId}": {
+      "schema": "Session",
+      "description": "Collection of sessions"
+    },
+    "notes/{noteId}": {
+      "schema": "Note",
+      "description": "Collection of notes"
+    },
+    "waitingList/{waitingId}": {
+      "schema": "WaitingItem",
+      "description": "Collection of waiting list items"
+    },
+    "profiles/{profileId}": {
+      "schema": "Profile",
+      "description": "Professional profiles"
+    },
+    "medicalPatients/{patientId}": {
+      "schema": "MedicalPatient",
+      "description": "Collection of medical patients"
+    },
+    "medicalRecords/{recordId}": {
+      "schema": "MedicalRecord",
+      "description": "Collection of medical records"
+    },
+    "patientFiles/{fileId}": {
+      "schema": "PatientFile",
+      "description": "Files uploaded for patients"
+    },
+    "reminders/{reminderId}": {
+      "schema": "Reminder",
+      "description": "Collection of reminders"
+    }
+  }
+}

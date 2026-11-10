@@ -1,0 +1,5 @@
+{
+  "name": "CliniFin - Sistema de Gestão Clínica",
+  "description": "Sistema completo para funcionarios da saúde: controle de sessões, pagamentos, agenda e acompanhamento de faltas.",
+  "requestFramePermissions": []
+}
